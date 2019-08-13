@@ -125,7 +125,7 @@ def create_svg(lang, config, side='front', mode='stencil'):
     # Add the wiring according to the chosen wiring layout
     if mode == 'wiring':
         wcl = wiring.wiring(config)
-        led_count = col_num * row_num + 4
+        led_count = col_num * row_num #+ 4
         for i in range(0, led_count - 1):
             # Draw wiring from start ...
             wire_start = searchInWCA(wcl, i)
