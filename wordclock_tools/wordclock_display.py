@@ -265,10 +265,10 @@ class wordclock_display:
                 if self.wci.waitForExit(1.0 / fps):
                     return
 
-    def setMinutes(self, time, color):
-        if time.minute % 5 != 0:
-            for i in range(1, time.minute % 5 + 1):
-                self.setPixelColor(self.wcl.mapMinutes(i), color)
+#    def setMinutes(self, time, color):
+#        if time.minute % 5 != 0:
+#            for i in range(1, time.minute % 5 + 1):
+#                self.setPixelColor(self.wcl.mapMinutes(i), color)
 
     def show(self):
         """
