@@ -21,7 +21,7 @@ class wiring:
         stencil_content = ast.literal_eval(config.get('language_options', language))
         self.WCA_HEIGHT = len(stencil_content)
         self.WCA_WIDTH = len(stencil_content[0].decode('utf-8'))
-        self.LED_COUNT = self.WCA_WIDTH * self.WCA_HEIGHT + 4  # Number of LED pixels.
+        self.LED_COUNT = self.WCA_WIDTH * self.WCA_HEIGHT #+ 4  # Number of LED pixels.
         self.LED_PIN = 18  # GPIO pin connected to the pixels (must support PWM!).
         self.LED_FREQ_HZ = 800000  # LED signal frequency in hertz (usually 800khz)
         self.LED_DMA = 10  # DMA channel to use for generating signal
@@ -80,11 +80,11 @@ class wiring:
     def getStripIndexFrom2D(self, x, y):
         return self.wcl.getStripIndexFrom2D(x, y)
 
-    def mapMinutes(self, min):
-        """
-        Access minutes (1,2,3,4)
-        """
-        return self.wcl.mapMinutes(min)
+#    def mapMinutes(self, min):
+#        """
+#        Access minutes (1,2,3,4)
+#        """
+#        return self.wcl.mapMinutes(min)
 
 
 class bernds_wiring:
@@ -201,24 +201,24 @@ class christians_wiring:
             pos = (self.WCA_HEIGHT - y) * self.WCA_WIDTH - x - 1
         return pos
 
-    def mapMinutes(self, min):
-        """
-        Access minutes (1,2,3,4)
-        Needs hardware/wiring dependent implementation
-        This implementation assumes the minutes to be wired as the last four leds of the led-strip
-        """
-        if min == 1:
-            return self.LED_COUNT - 4
-        elif min == 2:
-            return self.LED_COUNT - 3
-        elif min == 3:
-            return self.LED_COUNT - 2
-        elif min == 4:
-            return self.LED_COUNT - 1
-        else:
-            print('WARNING: Out of range, when mapping minutes...')
-            print(min)
-            return 0
+#    def mapMinutes(self, min):
+#        """
+#        Access minutes (1,2,3,4)
+#        Needs hardware/wiring dependent implementation
+#        This implementation assumes the minutes to be wired as the last four leds of the led-strip
+#        """
+#        if min == 1:
+#            return self.LED_COUNT - 4
+#        elif min == 2:
+#            return self.LED_COUNT - 3
+#        elif min == 3:
+#            return self.LED_COUNT - 2
+#        elif min == 4:
+#            return self.LED_COUNT - 1
+#        else:
+#            print('WARNING: Out of range, when mapping minutes...')
+#            print(min)
+#            return 0
 
 
 class timos_wiring:
